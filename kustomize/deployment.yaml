@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: hello-world-deployment
+  name: podinfo-deployment
   labels:
-    app: hello-world
+    app: podinfo
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: hello-world
+      app: podinfo
   template:
     metadata:
       labels:
-        app: hello-world
+        app: podinfo
     spec:
       containers:
-      - name: hello-world
-        image: hello-world:linux
+      - name: podinfo
+        image: stefanprodan/podinfo
         ports:
         - containerPort: 80
